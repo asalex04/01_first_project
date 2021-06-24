@@ -1,0 +1,10 @@
+
+.content img {
+  height: auto;
+  width:200%;
+  max-width: 800px;
+  max-height: 300px;
+}
+.descriptionBlock {
+  padding: 10px;
+}
