@@ -14,7 +14,7 @@ const MyPosts = (props) => {
                 <button>Add post</button>
             </div>
             <div className={classes.posts}>
-                {posts.map(el => <Post message={el.text} count={el.likesCount} />)}
+                {posts.map(el => <Post message={el.text} count={el.likesCount} ava={el.ava}/>)}
             </div>
         </div>
     )
