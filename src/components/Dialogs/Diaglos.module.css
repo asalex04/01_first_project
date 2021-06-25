@@ -1,6 +1,6 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 2fr 10fr ;
 }
 
 .dialogsItems {
@@ -12,10 +12,20 @@
 }
 
 .messages {
+    display: grid;
     padding: 10px;
 }
+.answer {
+    display: grid;
+    justify-content: right;
+    align-items: flex-end;
+}
 
-.messages .message {
-    color: white;
-
+.message {
+    width: 300px;
+    height: 30px;
+    padding: 10px;
+    background: #ccc;
+    border-radius: 20px ;
+    margin-right: 30px;
 }

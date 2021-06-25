@@ -12,8 +12,15 @@ const Dialogs = (props) => {
                 {dialogs.map(el => <DialogItem {...el} />)}
             </div>
             <div className={classes.messages}>
-                {messages.map(el => <Message message={el.text} />)}
+                {messages.map(el => <Message message={el} />)}
             </div>
+            <div>
+                <textarea ></textarea>
+            </div>
+           <div>
+                <button >Add post</button>
+            </div>
+
         </div>
     )
 }

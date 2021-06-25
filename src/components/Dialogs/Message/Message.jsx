@@ -2,8 +2,12 @@ import React from 'react';
 import classes from '../Diaglos.module.css'
 
 const Message = (props) => {
+    const classMessage = props.message.type === 'answer'
+        ? `${classes.message} ${classes.answer}`
+        : `${classes.message}`
+
     return (
-        <div className={classes.message}>{props.message}</div>
+        <div className={classMessage}>{props.message.text}</div>
     )
 }
 
