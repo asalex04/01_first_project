@@ -27,6 +27,7 @@ let state = {
 };
 
 export const addPost = (postMessage) => {
+    debugger
     const newPost = {
         id: _.uniqueId(),
         text: postMessage,
