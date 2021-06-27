@@ -7,7 +7,6 @@ const MyPosts = (props) => {
     const newPostElement = React.createRef();
     const addPost = () => {
         props.addPost(newPostText);
-
     }
 
     const onChangeText = () => {
