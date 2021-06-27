@@ -3,20 +3,24 @@ import classes from './MyPosts.module.css';
 import Post from './Post/Post' ;
 
 const MyPosts = (props) => {
-    const { posts } = props
+    const { posts, newPostText } = props.state
     const newPostElement = React.createRef();
-    debugger
     const addPost = () => {
+        props.addPost(newPostText);
+
+    }
+
+    const onChangeText = () => {
         const text = newPostElement.current.value;
-        props.addPost(text);
-        newPostElement.current.value = ''
+        props.updateNewPostText(text)
     }
 
     return (
         <div className={classes.postsBlock}>
             <h3>My posts</h3>
             <div>
-                <textarea ref={newPostElement}></textarea>
+                <textarea onChange={onChangeText} ref={newPostElement}
+                          value={newPostText}/>
             </div>
             <div>
                 <button onClick={addPost}>Add post</button>

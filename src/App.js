@@ -7,8 +7,8 @@ import Dialogs from './components/Dialogs/Dialogs';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 const App = (props) => {
-  const { dialogs, posts } = props.props.profilePage;
-  const { messages } = props.props.messagesPage;
+  const { dialogs } = props.state.profilePage;
+  const { messages } = props.state.messagesPage;
   return (
     <Router>
        <div className='app-wrapper'>
@@ -19,7 +19,11 @@ const App = (props) => {
                render={ () => <Dialogs messages={messages} dialogs={dialogs} />}
         />
         <Route path='/profile'
-               render={ () => <Profile posts={posts} addPost={props.addPost}/>}
+               render={ () => <Profile
+                   state={props.state.profilePage}
+                   addPost={props.addPost}
+                   updateNewPostText={props.updateNewPostText}
+               />}
         />
       </div>
     </div>

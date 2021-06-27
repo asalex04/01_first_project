@@ -14,7 +14,9 @@ let state = {
             {id: 1, text: "It's my first post", likesCount: '10', ava: 'https://friendtok.com/upload/photos/2021/03/BlRShw5IG5475RTXDDug_13_a14f8774a0d7d770faff995ddbbac266_avatar_full.jpg'},
             {id: 2, text: 'test', likesCount: '8', ava: 'https://demotivation.ru/wp-content/uploads/2020/11/d5ebbfe10aff8e9a5c281400a2151b20-digital-illustration-design-illustrations.jpg'},
             {id: 3, text: 'second post', likesCount: '5', ava: 'https://i.pinimg.com/736x/49/77/fe/4977fe60931071da34910703120c6040.jpg'},
-        ]
+        ],
+        newPostText: '',
+
     },
     messagesPage: {
         messages: [
@@ -26,9 +28,8 @@ let state = {
     },
     sidebar: {}
 };
-
+window.state = state;
 export const addPost = (postMessage) => {
-    debugger
     const newPost = {
         id: _.uniqueId(),
         text: postMessage,
@@ -36,6 +37,12 @@ export const addPost = (postMessage) => {
         ava: '',
     }
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
     rerenderEntireTree(state)
 }
+export const updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state)
+}
+
 export default state;
