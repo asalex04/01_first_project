@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import {rerenderEntireTree} from "../render";
 
 let state = {
     profilePage: {
@@ -35,5 +36,6 @@ export const addPost = (postMessage) => {
         ava: '',
     }
     state.profilePage.posts.push(newPost);
+    rerenderEntireTree(state)
 }
 export default state;
