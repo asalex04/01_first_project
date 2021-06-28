@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import {rerenderEntireTree} from "../render";
 
 let state = {
     profilePage: {
@@ -29,6 +28,11 @@ let state = {
     sidebar: {}
 };
 window.state = state;
+
+let rerenderEntireTree = () => {
+    console.log('state was changed')
+}
+
 export const addPost = (postMessage) => {
     const newPost = {
         id: _.uniqueId(),
@@ -45,4 +49,7 @@ export const updateNewPostText = (newText) => {
     rerenderEntireTree(state)
 }
 
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
+}
 export default state;
