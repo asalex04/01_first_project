@@ -7,6 +7,7 @@ import Dialogs from './components/Dialogs/Dialogs';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 const App = (props) => {
+    console.log(props)
   const { dialogs } = props.state.profilePage;
   const { messages } = props.state.messagesPage;
   return (
@@ -28,7 +29,7 @@ const App = (props) => {
       </div>
     </div>
     </Router>
-   
+
   );
 }
 
