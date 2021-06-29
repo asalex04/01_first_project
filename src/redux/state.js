@@ -31,6 +31,7 @@ let store = {
     _callSubscriber() {
         console.log('state was changed')
     },
+
     getState() {
          return this._state;
     },
@@ -38,21 +39,6 @@ let store = {
         this._callSubscriber = observer;
     },
 
-    // addPost() {
-    //     const newPost = {
-    //         id: _.uniqueId(),
-    //         text: this._state.profilePage.newPostText,
-    //         likesCount: 0,
-    //         ava: '',
-    //     }
-    //    this._state.profilePage.posts.push(newPost);
-    //    this._state.profilePage.newPostText = '';
-    //    this._callSubscriber(this._state);
-    // },
-    // updateNewPostText(newText) {
-    //     this._state.profilePage.newPostText = newText;
-    //     this._callSubscriber(this._state);
-    // },
     dispatch(action) {
          if (action.type === 'ADD-POST') {
              const newPost = {
