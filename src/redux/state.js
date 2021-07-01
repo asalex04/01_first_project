@@ -1,9 +1,6 @@
-import _ from 'lodash';
-
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
-const SEND_MESSAGE = 'SEND-MESSAGE';
+import profile_reducer from "./profile_reducer";
+import dialogs_reducer from "./dialogs_reducer";
+import sidebar_reducer from "./sidebar_reducer";
 
 let store = {
      _state: {
@@ -52,48 +49,13 @@ let store = {
     },
 
     dispatch(action) {
-        switch (action.type) {
-            case ADD_POST:
-                const newPost = {
-                    id: _.uniqueId(),
-                    text: this._state.profilePage.newPostText,
-                    likesCount: 0,
-                    ava: '',
-                }
-                this._state.profilePage.posts.push(newPost);
-                this._state.profilePage.newPostText = '';
-                this._callSubscriber(this._state);
-                break;
-            case UPDATE_NEW_POST_TEXT:
-                this._state.profilePage.newPostText = action.newText;
-                this._callSubscriber(this._state);
-                break;
-            case UPDATE_NEW_MESSAGE_TEXT:
-                this._state.dialogsPage.newMessageText = action.newText;
-                this._callSubscriber(this._state);
-                break;
-            case SEND_MESSAGE:
-                const newText = {
-                    id: _.uniqueId(),
-                    type: '',
-                    text: this._state.dialogsPage.newMessageText
-                }
-                this._state.dialogsPage.messages.push(newText);
-                this._state.dialogsPage.newMessageText = '';
-                this._callSubscriber(this._state);
-                break;
+        this._state.profilePage = profile_reducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogs_reducer(this._state.dialogsPage, action);
+        this._state.sidebar = sidebar_reducer(this._state.sidebar, action);
 
-        }
+        this._callSubscriber(this._state);
     }
-
 }
-export const addPostActionCreator = () => ({type: ADD_POST});
-export const updateNewPostActionCreator = (text) =>
-    ({type: UPDATE_NEW_POST_TEXT, newText: text});
-
-export const sendMessageCreator = () => ({type: SEND_MESSAGE});
-export const updateNewMessageCreator = (newMessage) =>
-  ({type: UPDATE_NEW_MESSAGE_TEXT, newText: newMessage});
 
 export default store;
 window.store = store;
