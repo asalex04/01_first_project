@@ -2,18 +2,17 @@ import React from 'react';
 import classes from './Diaglos.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import {sendMessageCreator, updateNewMessageCreator} from "../../redux/dialogs_reducer";
 
 const Dialogs = (props) => {
   const {messages, dialogs, newMessageText} = props.state;
 
   const onSendMessage = () => {
-    props.dispatch(sendMessageCreator())
+    props.sendMessage()
   }
 
   const onChangeMessage = (e) => {
     const message = e.target.value
-    props.dispatch(updateNewMessageCreator(message))
+    props.updateNewMessage(message)
   }
 
   return (
