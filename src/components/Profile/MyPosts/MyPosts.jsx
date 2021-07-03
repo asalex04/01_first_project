@@ -3,7 +3,7 @@ import classes from './MyPosts.module.css';
 import Post from './Post/Post' ;
 
 const MyPosts = (props) => {
-  const { posts, newPostText } = props.state
+  const { posts, newPostText } = props
 
     const onAddPost = () => {
       props.addPost()

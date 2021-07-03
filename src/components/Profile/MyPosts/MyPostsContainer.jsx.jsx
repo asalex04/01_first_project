@@ -3,6 +3,8 @@ import {addPostActionCreator, updateNewPostActionCreator} from "../../../redux/p
 import MyPosts from "./MyPosts";
 
 const MyPostsContainer = (props) => {
+    const { posts, newPostText } = props.state
+
     const addPost = () => {
         props.dispatch(addPostActionCreator());
     }
@@ -12,9 +14,9 @@ const MyPostsContainer = (props) => {
     }
 
     return (
-        <MyPosts updateNewPost={onChangeText}
-                 addPost={addPost}
-                 state={props.state}/>
+        <MyPosts updateNewPost={onChangeText} addPost={addPost}
+                 posts={posts} newPostText={newPostText}
+        />
     )
 }
 
