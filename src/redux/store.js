@@ -1,7 +1,7 @@
 import profile_reducer from "./profile_reducer";
 import dialogs_reducer from "./dialogs_reducer";
 import sidebar_reducer from "./sidebar_reducer";
-
+debugger
 let store = {
      _state: {
         profilePage: {
@@ -56,8 +56,8 @@ let store = {
         this._callSubscriber(this._state);
     }
 }
-
-export default store;
 window.store = store;
+export default store;
+
 
 

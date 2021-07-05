@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post' ;
 
@@ -24,7 +25,7 @@ const MyPosts = (props) => {
                 <button onClick={onAddPost}>Add post</button>
             </div>
             <div className={classes.posts}>
-                {posts.map(el => <Post message={el.text} count={el.likesCount} ava={el.ava}/>)}
+                {posts.map(el => <Post message={el.text} count={el.likesCount} ava={el.ava} key={_.uniqueId()}/>)}
             </div>
         </div>
     )
