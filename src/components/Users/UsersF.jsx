@@ -4,7 +4,6 @@ import classes from "./Users.module.css";
 import userPhoto from '../../../src/assets/images/user.png';
 
 const Users = (props) => {
-  const [users, setUsers] = useState()
   useEffect((props) => {
     axios.get('https://social-network.samuraijs.com/api/1.0/users')
       .then(response => {
@@ -48,7 +47,7 @@ const Users = (props) => {
 
   return <div>
     {
-      users.map(user => <div key={user.id}>
+      props.users.map(user => <div key={user.id}>
           <span>
             <div className={classes.item}>
               <img src={user.photos.small ? user.photos.small : userPhoto}/>
