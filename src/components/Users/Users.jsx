@@ -8,7 +8,7 @@ const Users = (props) => {
   const pages = [...Array(pageCount)].map((e, i) => i + 1)
   return <div>
     <div>
-      {pages.slice(0, 9).map((p, id) => {
+      {pages.reverse().slice(0, 9).map((p, id) => {
         return <span className={props.currentPage === p ? classes.selectPage : ''} key={id}
                      onClick={(e) => {
                        props.onPageChange(p)
