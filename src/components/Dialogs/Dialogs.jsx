@@ -1,4 +1,5 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 import _ from 'lodash';
 
 import classes from './Diaglos.module.css'
@@ -16,6 +17,8 @@ const Dialogs = (props) => {
     const message = e.target.value
     props.updateNewMessage(message)
   }
+
+  if (!props.isAuth) return <Redirect to='/login' />
 
   return (
     <div className={classes.dialogs}>

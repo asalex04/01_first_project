@@ -22,31 +22,33 @@ const Users = (props) => {
             <div>
               <NavLink to={'/profile/' + user.id}>
                 <img src={user.photos.small ? user.photos.small : userPhoto}
-                     className={classes.userPhoto} alt='img' />
+                     className={classes.userPhoto} alt='img'/>
               </NavLink>
             </div>
             <div>
               {user.followed
                 ? <button disabled={props.followingInProgress.some(id => id === user.id)}
-                          onClick={() => { props.unfollow(user.id)
-                }}>Unfollow</button>
+                          onClick={() => {
+                            props.unfollow(user.id)
+                          }}>Unfollow</button>
                 : <button disabled={props.followingInProgress.some(id => id === user.id)}
-                          onClick={() => { props.follow(user.id)
-                }}>Follow</button>}
+                          onClick={() => {
+                            props.follow(user.id)
+                          }}>Follow</button>}
             </div>
           </span>
-          <span>
+        <span>
             <div>{user.name}</div>
             <div>{user.status}</div>
           </span>
-          <span>
+        <span>
             <div>{'user.locations.country'}</div>
             <div>{'user.locations.city'}</div>
           </span>
         < /div>
-      )
+          )
     }
-  </div>
-}
+      </div>
+  }
 
 export default Users;
