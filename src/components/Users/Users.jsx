@@ -37,18 +37,17 @@ const Users = (props) => {
                           }}>Follow</button>}
             </div>
           </span>
-        <span>
+          <span>
             <div>{user.name}</div>
             <div>{user.status}</div>
           </span>
-        <span>
+          <span>
             <div>{'user.locations.country'}</div>
             <div>{'user.locations.city'}</div>
           </span>
-        < /div>
-          )
-    }
+        </div>)
+      }
       </div>
-  }
+}
 
 export default Users;
