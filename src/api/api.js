@@ -13,7 +13,7 @@ export const usersAPI = {
     return instance.get(`users?page=${currentPage}&count=${pageSize}`)
       .then(response => response.data)
   },
-  getProfile(userId=2) {
+  getProfile(userId) {
     console.log('Obsolete method. Please profileAPI object')
     return profileAPI.getProfile(userId)
   },
@@ -28,11 +28,11 @@ export const usersAPI = {
 }
 
 export const profileAPI = {
-  getProfile(userId=2) {
+  getProfile(userId) {
     return instance.get(`profile/${userId}`)
       .then(response => response.data)
   },
-  getStatus(userId=2) {
+  getStatus(userId) {
     return instance.get(`profile/status/${userId}`)
   },
   updateStatus(status) {
