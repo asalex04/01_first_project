@@ -1,6 +1,5 @@
 import _ from "lodash";
 
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 const SEND_MESSAGE = 'SEND-MESSAGE';
 
 const initialState = {
@@ -16,25 +15,19 @@ const initialState = {
     {id: 3, type: 'question', text: 'Yes'},
     {id: 4, type: 'answer', text: 'Yo'},
   ],
-  newMessageText: '',
 }
 
 const dialogsReducer = (state=initialState, action) => {
   switch (action.type) {
-    case UPDATE_NEW_MESSAGE_TEXT:
-      return {
-        ...state,
-        newMessageText: action.newText
-      }
     case SEND_MESSAGE: {
       const newText = {
         id: _.uniqueId(),
         type: '',
-        text: state.newMessageText
+        text: action.newMessageBody
       }
+      console.log(newText)
       return  {
         ...state,
-        newMessageText: '',
         messages: [ ...state.messages, newText ],
       }
     }
@@ -43,8 +36,6 @@ const dialogsReducer = (state=initialState, action) => {
   }
 }
 
-export const sendMessageCreator = () => ({type: SEND_MESSAGE});
-export const updateNewMessageCreator = (newMessage) =>
-  ({type: UPDATE_NEW_MESSAGE_TEXT, newText: newMessage});
+export const sendMessageCreator = (newMessageBody) => ({type: SEND_MESSAGE, newMessageBody});
 
 export default dialogsReducer;

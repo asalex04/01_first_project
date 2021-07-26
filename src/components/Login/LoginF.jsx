@@ -8,6 +8,7 @@ const LoginForm = () => {
     initialValues: {
       login: '',
       password: '',
+      toggle: false,
     },
     validationSchema: Yup.object().shape({
       login: Yup.string()
@@ -48,7 +49,12 @@ const LoginForm = () => {
         {formik.errors.password ? <span>{formik.errors.password}</span> : null}
       </div>
       <div>
-        <input type={'checkbox'}/>remember me
+        <input
+          name={'toggle'}
+          type={'checkbox'}
+          onChange={formik.handleChange}
+          value={formik.values.toggle}
+        />remember me
       </div>
       <button type="submit" className={classes.submitBtn}>Login</button>
     </form>
