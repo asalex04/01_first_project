@@ -2,7 +2,6 @@ import _ from "lodash";
 import {profileAPI} from "../api/api";
 
 const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
 
@@ -13,7 +12,6 @@ const initialState = {
     {id: 2, text: 'test', likesCount: '8', ava: 'https://demotivation.ru/wp-content/uploads/2020/11/d5ebbfe10aff8e9a5c281400a2151b20-digital-illustration-design-illustrations.jpg'},
     {id: 3, text: 'second post', likesCount: '5', ava: 'https://i.pinimg.com/736x/49/77/fe/4977fe60931071da34910703120c6040.jpg'},
   ],
-  newPostText: '',
   profile: null,
   status: "I's me"
 }
@@ -31,9 +29,6 @@ const profileReducer = (state=initialState, action) => {
         ...state,
         posts: [...state.posts, newPost],
       }
-    case UPDATE_NEW_POST_TEXT: {
-      return {...state, newPostText: action.newText}
-    }
     case SET_USER_PROFILE: {
       return {...state, profile: action.profile}
     }
@@ -48,7 +43,6 @@ const profileReducer = (state=initialState, action) => {
 export const addPostActionCreator = (newPostBody) => ({type: ADD_POST, newPostBody});
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export const setStatus = (status) => ({type: SET_STATUS, status});
-export const updateNewPostActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
 export const getUserProfile = (userId) => (dispatch) => {
     profileAPI.getProfile(userId)
       .then(data => {

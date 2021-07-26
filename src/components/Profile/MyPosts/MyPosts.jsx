@@ -6,8 +6,6 @@ import {Field, reduxForm} from "redux-form";
 
 const ava = 'https://friendtok.com/upload/photos/2021/03/BlRShw5IG5475RTXDDug_13_a14f8774a0d7d770faff995ddbbac266_avatar_full.jpg'
 const MyPosts = (props) => {
-  const { posts, newPostText } = props
-
     const addNewPost = (values) => {
       props.addPost(values.newPostBody)
     }
@@ -17,7 +15,7 @@ const MyPosts = (props) => {
             <h3>My posts</h3>
             <AddPostFormRedux onSubmit={addNewPost}/>
             <div className={classes.posts}>
-                {posts.map(el => <Post message={el.text} count={el.likesCount} ava={ava} key={_.uniqueId()}/>)}
+                {props.posts.map(el => <Post message={el.text} count={el.likesCount} ava={ava} key={_.uniqueId()}/>)}
             </div>
         </div>
     )
