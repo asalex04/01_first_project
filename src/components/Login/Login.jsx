@@ -1,20 +1,31 @@
 import React from 'react';
+import classes from './Login.module.css'
 
-const LoginForm = (props) => {
+const LoginForm = () => {
   return <div>
-    <form>
-      <div>
-        <input placeholder={'Login'}/>
+    <form className={classes.form}>
+      <div className={classes.field}>
+        <label htmlFor="login">Login</label>
+        <input
+          id="login"
+          name="login"
+          type="text"
+          placeholder={'Login'}
+        />
       </div>
-      <div>
-        <input placeholder={'Password'}/>
+      <div className={classes.field}>
+        <label htmlFor="password">Password</label>
+        <input
+          id="password"
+          name="password"
+          type="text"
+          placeholder={'password'}
+        />
       </div>
       <div>
         <input type={'checkbox'}/>remember me
       </div>
-      <div>
-        <button>Login</button>
-      </div>
+      <button type="submit" className={classes.submitBtn}>Login</button>
     </form>
   </div>;
 };

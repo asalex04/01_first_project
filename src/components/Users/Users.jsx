@@ -7,6 +7,7 @@ const Users = (props) => {
   const pageCount = Math.ceil(props.totalUsersCount / props.pageSize);
   const pages = [...Array(pageCount)].map((e, i) => i + 1)
   return <div>
+    <UsersSearchForm />
     <div>
       {pages.reverse().slice(0, 9).map((p, id) => {
         return <span className={props.currentPage === p ? classes.selectPage : ''} key={id}
@@ -49,5 +50,9 @@ const Users = (props) => {
       }
       </div>
 }
-
+const UsersSearchForm = () => {
+  return <div>
+    test
+  </div>
+}
 export default Users;
