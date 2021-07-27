@@ -3,6 +3,10 @@ import _ from 'lodash';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post' ;
 import {Field, reduxForm} from "redux-form";
+import {required, maxLengthCreator} from '../../../utils/validators/validator'
+import {Textarea} from "../../common/FormsControls/FormsControls";
+
+const maxLength10 = maxLengthCreator(10)
 
 const ava = 'https://friendtok.com/upload/photos/2021/03/BlRShw5IG5475RTXDDug_13_a14f8774a0d7d770faff995ddbbac266_avatar_full.jpg'
 const MyPosts = (props) => {
@@ -24,7 +28,9 @@ const AddPostForm = (props) => {
   return <div>
     <form onSubmit={props.handleSubmit}>
       <div>
-        <Field component={'textarea'} name={'newPostBody'}/>
+        <Field component={Textarea} name={'newPostBody'} placeholder={'PostMessage'}
+               validate={[required, maxLength10]}
+        />
       </div>
       <div>
         <button>Add post</button>

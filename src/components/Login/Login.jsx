@@ -1,6 +1,8 @@
 import React from 'react';
 import classes from './Login.module.css'
 import {reduxForm, Field} from "redux-form";
+import {Input} from "../common/FormsControls/FormsControls";
+import {required} from '../../utils/validators/validator'
 
 const LoginForm = (props) => {
   return <div>
@@ -8,26 +10,28 @@ const LoginForm = (props) => {
       <div className={classes.field}>
         <label htmlFor="login">Login</label>
         <Field
+          validate={required}
           id="login"
           name={"login"}
           type="text"
           placeholder={'Login'}
-          component={'input'}
+          component={Input}
         />
       </div>
       <div className={classes.field}>
         <label htmlFor="password">Password</label>
         <Field
+          validate={required}
           id="password"
           name={"password"}
           type="text"
           placeholder={'password'}
-          component={'input'}
+          component={Input}
         />
       </div>
       <div>
         <Field
-          component={'input'}
+          component={Input}
           type={'checkbox'}
           name={'rememberMe'}
         />remember me

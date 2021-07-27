@@ -1,10 +1,10 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
 import _ from 'lodash';
-import {reduxForm, Field} from "redux-form";
 import classes from './Diaglos.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+import AddMessageFormRedux from './Message/AddMessageForm'
 
 const Dialogs = (props) => {
   const {messages, dialogs} = props.dialogsPage;
@@ -27,19 +27,4 @@ const Dialogs = (props) => {
     </div>
   )
 }
-
-const AddMessageForm = (props) => {
-  return (
-    <form onSubmit={props.handleSubmit}>
-      <div>
-        <Field component={'textarea'}
-               name={'newMessageBody'}
-               placeholder='Enter your message'
-        />
-      </div>
-      <div><button>Add post</button></div>
-    </form>
-  )
-}
-const AddMessageFormRedux = reduxForm({form: 'dialogAddMessageForm'})(AddMessageForm)
 export default Dialogs;
