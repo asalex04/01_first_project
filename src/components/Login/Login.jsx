@@ -5,7 +5,8 @@ import {Input} from "../common/FormsControls/FormsControls";
 import {required} from '../../utils/validators/validator'
 import {connect} from "react-redux";
 import {login} from "../../redux/auth_reducer";
-import Redirect from "react-router-dom/es/Redirect";
+import {Redirect} from "react-router-dom";
+import style from '../common/FormsControls/FormsControls.module.css'
 
 const LoginForm = (props) => {
   return <div>
@@ -39,6 +40,9 @@ const LoginForm = (props) => {
           name={'rememberMe'}
         />remember me
       </div>
+      { props.error && <span className={style.formError}>
+        {props.error}
+      </span>}
       <button type="submit" className={classes.submitBtn}>Login</button>
     </form>
   </div>;
