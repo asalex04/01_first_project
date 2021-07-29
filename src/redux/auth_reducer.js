@@ -34,7 +34,6 @@ export const getAuthUserData = () => (dispatch) => {
           dispatch(setAuthUserData(id, email, login, true))
         }
       })
-  return 'result'
 }
 
 export const login = (email, password, rememberMe) => (dispatch) => {
