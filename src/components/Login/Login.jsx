@@ -1,47 +1,27 @@
 import React from 'react';
 import classes from './Login.module.css'
-import {reduxForm, Field} from "redux-form";
-import {Input} from "../common/FormsControls/FormsControls";
+import {reduxForm} from "redux-form";
+import {CreateField, Input} from "../common/FormsControls/FormsControls";
 import {required} from '../../utils/validators/validator'
 import {connect} from "react-redux";
 import {login} from "../../redux/auth_reducer";
 import {Redirect} from "react-router-dom";
 import style from '../common/FormsControls/FormsControls.module.css'
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error}) => {
   return <div>
-    <form className={classes.form} onSubmit={props.handleSubmit}>
+    <form className={classes.form} onSubmit={handleSubmit}>
       <div className={classes.field}>
-        <label htmlFor="email">Email</label>
-        <Field
-          validate={required}
-          id="email"
-          name={"email"}
-          type="text"
-          placeholder={'email'}
-          component={Input}
-        />
+        {CreateField('email', 'Email', required, 'email', 'email', 'text', 'email', Input)}
       </div>
       <div className={classes.field}>
-        <label htmlFor="password">Password</label>
-        <Field
-          validate={required}
-          id="password"
-          name={"password"}
-          type="password"
-          placeholder={'password'}
-          component={Input}
-        />
+        {CreateField('password', 'Password', required, "password", "password", "password", "password", Input)}
       </div>
       <div>
-        <Field
-          component={Input}
-          type={'checkbox'}
-          name={'rememberMe'}
-        />remember me
+        {CreateField(null, null, null, null, "rememberMe", "checkbox", null, Input, 'remember me')}
       </div>
-      { props.error && <span className={style.formError}>
-        {props.error}
+      {error && <span className={style.formError}>
+        {error}
       </span>}
       <button type="submit" className={classes.submitBtn}>Login</button>
     </form>
