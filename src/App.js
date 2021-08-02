@@ -50,7 +50,7 @@ const  AppContainer = compose(
   connect(mapStateToProps, {initializeApp, logout}))(App);
 
 const MainApp = (props) => {
-  return <BrowserRouter>
+  return <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Provider store={store}>
       <AppContainer />
     </Provider>
