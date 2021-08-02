@@ -1,16 +1,20 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import './App.css'
 import NavBar from './components/Navbar/NavBar';
-import {Route} from 'react-router-dom';
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import {BrowserRouter, Route} from 'react-router-dom';
 import UsersContainer from "./components/Users/UsersContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
-import {connect} from "react-redux";
+import {connect, Provider} from "react-redux";
 import {logout} from "./redux/auth_reducer";
 import {initializeApp} from "./redux/app_reduser";
 import Preloader from "./components/common/Preloader/Preloader";
+import {compose} from "redux";
+import store from "./redux/redux_store";
+import Switch from "react-bootstrap/Switch";
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
+const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
+
 
 class App extends React.Component {
   componentDidMount() {
@@ -25,14 +29,14 @@ class App extends React.Component {
         <HeaderContainer/>
         <NavBar/>
         <div className='app-wrapper-content'>
-          <Route path='/dialogs'
-                 render={() => <DialogsContainer/>}/>
-          <Route path='/profile/:userId?'
-                 render={() => <ProfileContainer/>}/>
-          <Route path='/users'
-                 render={() => <UsersContainer/>}/>
-          <Route path='/login'
-                 render={() => <Login/>}/>
+          <Suspense fallback={<Preloader />}>
+            <Switch>
+              <Route path='/login' component={Login}/>
+              <Route path='/dialogs' component={DialogsContainer}/>
+              <Route path='/profile/:userId?' component={ProfileContainer}/>
+            </Switch>
+          </Suspense>
+          <Route path='/users' component={UsersContainer}/>
         </div>
       </div>
     );
@@ -42,5 +46,15 @@ const mapStateToProps = (state) => ({
   initialized: state.app.initialized
 })
 
-export default connect(mapStateToProps, {initializeApp, logout})(App);
+const  AppContainer = compose(
+  connect(mapStateToProps, {initializeApp, logout}))(App);
 
+const MainApp = (props) => {
+  return <BrowserRouter>
+    <Provider store={store}>
+      <AppContainer />
+    </Provider>
+  </BrowserRouter>
+}
+
+export default MainApp
