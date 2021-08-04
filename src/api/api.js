@@ -25,6 +25,9 @@ export const usersAPI = {
     return instance.delete(`follow/${userId}`)
       .then(response => response.data)
   },
+  getAllUsers() {
+    return instance.get('users')
+  }
 }
 
 export const profileAPI = {
@@ -38,6 +41,18 @@ export const profileAPI = {
   updateStatus(status) {
     return instance.put(`profile/status`, { status: status })
   },
+  savePhoto(photoFile) {
+    const formData = new FormData()
+    formData.append('image', photoFile, )
+    return instance.put('profile/photo', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+  },
+  saveProfile(profile) {
+    return instance.put(`profile`, profile)
+  }
 }
 
 export const AuthAPI = {
@@ -49,6 +64,12 @@ export const AuthAPI = {
   },
   logout() {
     return instance.delete(`auth/login`)
+  },
+}
+
+export const SecurityAPI = {
+  getCaptcha() {
+    return instance.get(`security/get-captcha-url`)
   },
 }
 

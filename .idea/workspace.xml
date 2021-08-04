@@ -11,8 +11,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d143519-b3ff-4a4f-9ae9-6fa6e148362a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainerF.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileDataForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatusF.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatusF.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/auth_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth_reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile_reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +76,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Profile/ProfileInfo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -75,19 +86,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/react_01/src/components/common/Paginator" />
-      <recent name="$PROJECT_DIR$/react_01/src/utils/validators" />
-      <recent name="$PROJECT_DIR$/react_01/src" />
-      <recent name="$PROJECT_DIR$/react_01/src/components/Profile" />
-      <recent name="$PROJECT_DIR$/react_01/src/components/Profile/MyPosts" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/Profile/ProfileInfo" />
       <recent name="$PROJECT_DIR$/react_01/src/components/Users" />
       <recent name="$PROJECT_DIR$/react_01/src/components/common/Paginator" />
       <recent name="$PROJECT_DIR$/react_01/src/redux" />
       <recent name="$PROJECT_DIR$/react_01/src/components/Dialogs" />
-      <recent name="$PROJECT_DIR$/react_01/src/components/Profile/MyPosts/Post" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/Profile" />
+      <recent name="$PROJECT_DIR$/react_01/src/components/common/Paginator" />
+      <recent name="$PROJECT_DIR$/react_01/src/utils/validators" />
+      <recent name="$PROJECT_DIR$/react_01/src" />
+      <recent name="$PROJECT_DIR$/react_01/src/components/Profile" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -96,19 +107,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Jest.ProfileStatus.test.js">
-    <configuration name="ProfileStatus component" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/react_01/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$/react_01" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/react_01/src/components/Profile/ProfileInfo/ProfileStatus.test.js" />
-      <test-names>
-        <test-name value="ProfileStatus component" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="ProfileStatus.test.js" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -149,6 +147,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/react_01/package.json" />
       <command value="run" />
@@ -160,20 +168,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Jest.ProfileStatus component" />
       <item itemvalue="Jest.ProfileStatus.test.js" />
       <item itemvalue="Node.js.index.js" />
       <item itemvalue="npm.build" />
       <item itemvalue="npm.start" />
       <item itemvalue="npm.deploy" />
+      <item itemvalue="npm.start (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start (1)" />
         <item itemvalue="npm.deploy" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
         <item itemvalue="Jest.ProfileStatus.test.js" />
-        <item itemvalue="Jest.ProfileStatus component" />
       </list>
     </recent_temporary>
   </component>
@@ -240,7 +248,9 @@
       <workItem from="1627788953954" duration="10391000" />
       <workItem from="1627878049935" duration="4129000" />
       <workItem from="1627882300979" duration="964000" />
-      <workItem from="1627883880687" duration="5054000" />
+      <workItem from="1627883880687" duration="23813000" />
+      <workItem from="1627967785436" duration="18967000" />
+      <workItem from="1628048065046" duration="10950000" />
     </task>
     <servers />
   </component>
@@ -280,22 +290,22 @@
     </state>
     <state x="583" y="207" width="424" height="484" key="FileChooserDialogImpl/1600.0.1920.1080/0.27.1600.873@0.27.1600.873" timestamp="1626764738314" />
     <state x="2300" y="223" width="424" height="513" key="FileChooserDialogImpl/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1627878727954" />
-    <state width="1830" height="200" key="GridCell.Tab.0.bottom" timestamp="1627882270970">
+    <state width="1830" height="200" key="GridCell.Tab.0.bottom" timestamp="1628048279010">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state width="1830" height="200" key="GridCell.Tab.0.bottom/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1627882270970" />
-    <state width="1830" height="200" key="GridCell.Tab.0.center" timestamp="1627882270970">
+    <state width="1830" height="200" key="GridCell.Tab.0.bottom/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628048279010" />
+    <state width="1830" height="200" key="GridCell.Tab.0.center" timestamp="1628048279010">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state width="1830" height="200" key="GridCell.Tab.0.center/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1627882270970" />
-    <state width="1830" height="200" key="GridCell.Tab.0.left" timestamp="1627882270970">
+    <state width="1830" height="200" key="GridCell.Tab.0.center/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628048279010" />
+    <state width="1830" height="200" key="GridCell.Tab.0.left" timestamp="1628048279010">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state width="1830" height="200" key="GridCell.Tab.0.left/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1627882270970" />
-    <state width="1830" height="200" key="GridCell.Tab.0.right" timestamp="1627882270970">
+    <state width="1830" height="200" key="GridCell.Tab.0.left/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628048279010" />
+    <state width="1830" height="200" key="GridCell.Tab.0.right" timestamp="1628048279010">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state width="1830" height="200" key="GridCell.Tab.0.right/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1627882270970" />
+    <state width="1830" height="200" key="GridCell.Tab.0.right/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628048279010" />
     <state width="1830" height="226" key="GridCell.Tab.1.bottom" timestamp="1627548320672">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>

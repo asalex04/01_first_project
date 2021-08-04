@@ -1,7 +1,7 @@
 import React, {Suspense} from 'react';
 import './App.css'
 import NavBar from './components/Navbar/NavBar';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {HashRouter, Route} from 'react-router-dom';
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
@@ -13,7 +13,7 @@ import {compose} from "redux";
 import store from "./redux/redux_store";
 import Switch from "react-bootstrap/Switch";
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
-const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
+const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainerF'));
 
 
 class App extends React.Component {
@@ -50,11 +50,11 @@ const  AppContainer = compose(
   connect(mapStateToProps, {initializeApp, logout}))(App);
 
 const MainApp = (props) => {
-  return <BrowserRouter basename={process.env.PUBLIC_URL}>
+  return <HashRouter >
     <Provider store={store}>
       <AppContainer />
     </Provider>
-  </BrowserRouter>
+  </HashRouter>
 }
 
 export default MainApp
