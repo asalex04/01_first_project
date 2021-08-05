@@ -1,4 +1,4 @@
-import React, {Suspense} from 'react';
+import React, {Suspense, useEffect} from 'react';
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import './App.css'
 import NavBar from './components/Navbar/NavBar';
@@ -16,21 +16,19 @@ const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsCo
 const Login = React.lazy(() => import('./components/Login/Login'));
 const NotFound = React.lazy(() => import('./components/NotFound/NotFound'));
 
-class App extends React.Component {
-  catchAllUnhandledErrors = (reason, promise) => {
-  alert('Some error occurred')
+const App = (props) => {
+  const catchAllUnhandledErrors = (reason, promise) => {
+    alert('Some error occurred')
   }
-  componentDidMount() {
-    this.props.initializeApp()
-    window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors)
-  }
+  useEffect(() => {
+    props.initializeApp()
+    window.addEventListener("unhandledrejection", catchAllUnhandledErrors)
+    return () => {
+      window.removeEventListener("unhandledrejection", catchAllUnhandledErrors)
+    }
+  })
 
-  componentWillUnmount() {
-    window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors)
-  }
-
-  render() {
-    if (!this.props.initialized) {
+    if (!props.initialized) {
       return <Preloader/>
     }
     return (
@@ -53,7 +51,6 @@ class App extends React.Component {
         </div>
       </div>
     );
-  }
 }
 
 const mapStateToProps = (state) => ({
