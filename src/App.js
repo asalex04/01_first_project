@@ -1,60 +1,74 @@
 import React, {Suspense} from 'react';
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import './App.css'
 import NavBar from './components/Navbar/NavBar';
-import {HashRouter, Route} from 'react-router-dom';
-import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import Login from "./components/Login/Login";
+import ProfileContainer from './components/Profile/ProfileContainer'
+import UsersContainer from './components/Users/UsersContainer'
 import {connect, Provider} from "react-redux";
 import {logout} from "./redux/auth_reducer";
 import {initializeApp} from "./redux/app_reduser";
 import Preloader from "./components/common/Preloader/Preloader";
 import {compose} from "redux";
 import store from "./redux/redux_store";
-import Switch from "react-bootstrap/Switch";
-const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
-const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainerF'));
 
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
+const Login = React.lazy(() => import('./components/Login/Login'));
+const NotFound = React.lazy(() => import('./components/NotFound/NotFound'));
 
 class App extends React.Component {
+  catchAllUnhandledErrors = (reason, promise) => {
+  alert('Some error occurred')
+  }
   componentDidMount() {
     this.props.initializeApp()
+    window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors)
   }
+
+  componentWillUnmount() {
+    window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors)
+  }
+
   render() {
     if (!this.props.initialized) {
-      return <Preloader />
+      return <Preloader/>
     }
     return (
       <div className='app-wrapper'>
         <HeaderContainer/>
         <NavBar/>
         <div className='app-wrapper-content'>
-          <Suspense fallback={<Preloader />}>
-            <Switch>
-              <Route path='/login' component={Login}/>
-              <Route path='/dialogs' component={DialogsContainer}/>
-              <Route path='/profile/:userId?' component={ProfileContainer}/>
-            </Switch>
-          </Suspense>
-          <Route path='/users' component={UsersContainer}/>
+          <Switch>
+            <Redirect exact from="/" to="/profile" />
+            <Route path='/users' component={UsersContainer}/>
+            <Route path='/profile/:userId?' component={ProfileContainer}/>
+            <Suspense fallback={<Preloader/>}>
+              <Switch>
+                <Route path='/login' component={Login}/>
+                <Route path='/dialogs' component={DialogsContainer}/>
+                <Route path='*' component={NotFound}/>
+              </Switch>
+            </Suspense>
+          </Switch>
         </div>
       </div>
     );
   }
 }
+
 const mapStateToProps = (state) => ({
   initialized: state.app.initialized
 })
 
-const  AppContainer = compose(
+const AppContainer = compose(
   connect(mapStateToProps, {initializeApp, logout}))(App);
 
 const MainApp = (props) => {
-  return <HashRouter >
+  return <BrowserRouter>
     <Provider store={store}>
-      <AppContainer />
+      <AppContainer/>
     </Provider>
-  </HashRouter>
+  </BrowserRouter>
 }
 
 export default MainApp

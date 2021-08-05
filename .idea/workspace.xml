@@ -11,10 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d143519-b3ff-4a4f-9ae9-6fa6e148362a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/NotFound/NotFound.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/auth_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth_reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainerF.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatusF.jsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +70,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="Project Files" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../test_tasks/thunk" />
@@ -73,7 +79,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/react_01/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -241,7 +247,9 @@
       <workItem from="1627882300979" duration="964000" />
       <workItem from="1627883880687" duration="23813000" />
       <workItem from="1627967785436" duration="18967000" />
-      <workItem from="1628048065046" duration="18499000" />
+      <workItem from="1628048065046" duration="24079000" />
+      <workItem from="1628082649422" duration="2477000" />
+      <workItem from="1628137600771" duration="7157000" />
     </task>
     <servers />
   </component>
@@ -272,6 +280,10 @@
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="2262" y="354" width="652" height="396" key="#com.intellij.fileTypes.FileTypeChooser/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1627555450124" />
+    <state x="2326" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1628141776440">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2326" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628141776440" />
     <state x="2117" y="100" width="943" height="904" key="CommitChangelistDialog2" timestamp="1626784785297">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
@@ -281,22 +293,22 @@
     </state>
     <state x="583" y="207" width="424" height="484" key="FileChooserDialogImpl/1600.0.1920.1080/0.27.1600.873@0.27.1600.873" timestamp="1626764738314" />
     <state x="2300" y="223" width="424" height="513" key="FileChooserDialogImpl/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628071360663" />
-    <state width="1830" height="200" key="GridCell.Tab.0.bottom" timestamp="1628048279010">
+    <state width="1830" height="200" key="GridCell.Tab.0.bottom" timestamp="1628139202249">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state width="1830" height="200" key="GridCell.Tab.0.bottom/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628048279010" />
-    <state width="1830" height="200" key="GridCell.Tab.0.center" timestamp="1628048279010">
+    <state width="1830" height="200" key="GridCell.Tab.0.bottom/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628139202249" />
+    <state width="1830" height="200" key="GridCell.Tab.0.center" timestamp="1628139202249">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state width="1830" height="200" key="GridCell.Tab.0.center/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628048279010" />
-    <state width="1830" height="200" key="GridCell.Tab.0.left" timestamp="1628048279010">
+    <state width="1830" height="200" key="GridCell.Tab.0.center/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628139202249" />
+    <state width="1830" height="200" key="GridCell.Tab.0.left" timestamp="1628139202249">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state width="1830" height="200" key="GridCell.Tab.0.left/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628048279010" />
-    <state width="1830" height="200" key="GridCell.Tab.0.right" timestamp="1628048279010">
+    <state width="1830" height="200" key="GridCell.Tab.0.left/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628139202249" />
+    <state width="1830" height="200" key="GridCell.Tab.0.right" timestamp="1628139202249">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state width="1830" height="200" key="GridCell.Tab.0.right/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628048279010" />
+    <state width="1830" height="200" key="GridCell.Tab.0.right/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628139202249" />
     <state width="1830" height="226" key="GridCell.Tab.1.bottom" timestamp="1627548320672">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
@@ -345,10 +357,14 @@
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1830" height="226" key="GridCell.Tab.3.right/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1627548320673" />
-    <state x="2380" y="305" key="SettingsEditor" timestamp="1627804619338">
+    <state x="2380" y="305" key="SettingsEditor" timestamp="1628143225038">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state x="2380" y="305" key="SettingsEditor/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1627804619338" />
+    <state x="2380" y="305" key="SettingsEditor/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628143225038" />
+    <state x="2322" y="286" width="540" height="524" key="StructurePopup" timestamp="1628076741307">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2322" y="286" width="540" height="524" key="StructurePopup/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628076741307" />
     <state x="2239" y="27" width="698" height="873" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1628067672364">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
