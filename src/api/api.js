@@ -4,9 +4,8 @@ const instance = axios.create({
   baseURL: 'https://social-network.samuraijs.com/api/1.0/',
   withCredentials: true,
   headers: {
-    'API-KEY': 'b03070c6-9b60-4788-9dc4-ffd74fcfb476'
+    'API-KEY': '05829ed5-b095-453f-b326-b238001f6ea8'
   },
-  proxy: 'https://hexlet-allorigins.herokuapp.com'
 });
 
 export const usersAPI = {
