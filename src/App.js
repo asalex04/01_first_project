@@ -5,7 +5,7 @@ import NavBar from './components/Navbar/NavBar';
 import HeaderContainer from "./components/Header/HeaderContainer";
 import ProfileContainer from './components/Profile/ProfileContainer'
 import UsersContainer from './components/Users/UsersContainer'
-import {connect, Provider} from "react-redux";
+import {connect, Provider, useSelector} from "react-redux";
 import {logout} from "./redux/auth_reducer";
 import {initializeApp} from "./redux/app_reduser";
 import Preloader from "./components/common/Preloader/Preloader";
@@ -57,10 +57,11 @@ const mapStateToProps = (state) => ({
   initialized: state.app.initialized
 })
 
+
 const AppContainer = compose(
   connect(mapStateToProps, {initializeApp, logout}))(App);
 
-const MainApp = (props) => {
+const MainApp = () => {
   return <BrowserRouter>
     <Provider store={store}>
       <AppContainer/>
