@@ -5,7 +5,8 @@ const instance = axios.create({
   withCredentials: true,
   headers: {
     'API-KEY': 'b03070c6-9b60-4788-9dc4-ffd74fcfb476'
-  }
+  },
+  proxy: 'https://hexlet-allorigins.herokuapp.com'
 });
 
 export const usersAPI = {
