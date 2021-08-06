@@ -1,0 +1,2 @@
+(this.webpackJsonpreact_01=this.webpackJsonpreact_01||[]).push([[5],{297:function(t,e,s){"use strict";s.r(e);s(1);var c=s(0);e.default=function(){return Object(c.jsx)("div",{children:Object(c.jsx)("img",{src:"https://img2.fonwall.ru/o/ts/404-computer-desktop.jpg?route=thumb&h=350",alt:"img"})})}}}]);
+//# sourceMappingURL=5.1584053e.chunk.js.map
