@@ -11,10 +11,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d143519-b3ff-4a4f-9ae9-6fa6e148362a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersF.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/app_reduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/app_reduser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/auth_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth_reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/dialogs_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs_reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile_reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sidebar_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sidebar_reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users_reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,13 +77,14 @@
     <property name="TODO_SCOPE" value="Project Files" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../test_tasks/thunk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/react_01/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -245,6 +255,10 @@
       <workItem from="1628048065046" duration="24079000" />
       <workItem from="1628082649422" duration="2477000" />
       <workItem from="1628137600771" duration="14336000" />
+      <workItem from="1628309456042" duration="6553000" />
+      <workItem from="1628319632795" duration="2587000" />
+      <workItem from="1628322933238" duration="8696000" />
+      <workItem from="1628395820046" duration="1311000" />
     </task>
     <servers />
   </component>
@@ -288,22 +302,22 @@
     </state>
     <state x="583" y="207" width="424" height="484" key="FileChooserDialogImpl/1600.0.1920.1080/0.27.1600.873@0.27.1600.873" timestamp="1626764738314" />
     <state x="2300" y="223" width="424" height="513" key="FileChooserDialogImpl/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628071360663" />
-    <state width="1830" height="200" key="GridCell.Tab.0.bottom" timestamp="1628165395578">
+    <state width="1830" height="200" key="GridCell.Tab.0.bottom" timestamp="1628397351460">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state width="1830" height="200" key="GridCell.Tab.0.bottom/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628165395578" />
-    <state width="1830" height="200" key="GridCell.Tab.0.center" timestamp="1628165395578">
+    <state width="1830" height="200" key="GridCell.Tab.0.bottom/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628397351460" />
+    <state width="1830" height="200" key="GridCell.Tab.0.center" timestamp="1628397351460">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state width="1830" height="200" key="GridCell.Tab.0.center/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628165395578" />
-    <state width="1830" height="200" key="GridCell.Tab.0.left" timestamp="1628165395578">
+    <state width="1830" height="200" key="GridCell.Tab.0.center/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628397351460" />
+    <state width="1830" height="200" key="GridCell.Tab.0.left" timestamp="1628397351460">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state width="1830" height="200" key="GridCell.Tab.0.left/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628165395578" />
-    <state width="1830" height="200" key="GridCell.Tab.0.right" timestamp="1628165395578">
+    <state width="1830" height="200" key="GridCell.Tab.0.left/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628397351460" />
+    <state width="1830" height="200" key="GridCell.Tab.0.right" timestamp="1628397351460">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state width="1830" height="200" key="GridCell.Tab.0.right/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628165395578" />
+    <state width="1830" height="200" key="GridCell.Tab.0.right/1600.0.1920.1080/0.27.1600.873@1600.0.1920.1080" timestamp="1628397351460" />
     <state width="1830" height="226" key="GridCell.Tab.1.bottom" timestamp="1627548320672">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
@@ -400,6 +414,11 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/react_01/src/App.js</url>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/types/types.ts</url>
+          <line>15</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
